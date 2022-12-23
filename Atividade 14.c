@@ -12,7 +12,8 @@ int main(){
 	return 0 ;
 }
 
-#02##include <stdio.h>
+//02//
+#include <stdio.h>
 #include <stdlib.h>
 
 int main(){
@@ -52,3 +53,90 @@ int main(){
 	
 	return 0;
 }
+
+//03//
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Calculo{
+    float salario, vendas, salario_final;
+};
+
+int main(){
+    struct Calculo *vendedor = (struct Calculo*) malloc(sizeof(struct Calculo));
+	
+	printf("Digite o seu salario:");
+	scanf("%f",&vendedor->salario);
+	
+	printf("Informe o total de vendas no mes:");
+	scanf("%f",&vendedor->vendas);
+	
+    vendedor->salario_final = ((vendedor->vendas) * 0.15) + (vendedor->salario);
+	
+	printf("TOTAL = %.2f", vendedor->salario_final);
+	
+	return 0;
+}
+//Ou pode ser de outra forma// 03//
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    float *salario = (float*) malloc(sizeof(float));
+    float *vendas = (float*) malloc(sizeof(float));
+    float *salario_final = (float*) malloc(sizeof(float));
+    
+	printf("Digite o seu salario:");
+	scanf("%f",salario);
+	
+	printf("Informe o total de vendas no mes:");
+	scanf("%f",vendas);
+	
+    *salario_final = ((*vendas) * 0.15) + (*salario);
+	
+	printf("TOTAL = %.2f", *salario_final);
+	
+	return 0;
+}
+
+//04//
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Receba{
+    float nota[3];
+};
+
+int main(){
+    struct Receba *notas = (struct Receba*) malloc(sizeof(struct Receba));
+    float *media = (float*) malloc(sizeof(float));
+    
+    printf("Informe a suas tres notas (Ex: nota1 , nota2 , nota3):");
+    scanf("%f , %f , %f", &notas->nota[0], &notas->nota[1], &notas->nota[2]);
+    
+    *media = ((notas->nota[0]) + (notas->nota[1]) + (notas->nota[2])) / 3 ; 
+    
+    printf("MEDIA = %.2f", *media);
+    
+    return 0;
+}
+// OUTRA FORMA DE RESPONDER É//
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    float *nota = (float*) malloc(sizeof(float));
+    float *media = (float*) malloc(sizeof(float));
+    
+    printf("Informe a suas tres notas (Ex: nota1 , nota2 , nota3):");
+    scanf("%f , %f , %f", &nota[0], &nota[1], &nota[2]);
+    
+    *media = ((nota[0]) + (nota[1]) + (nota[2])) / 3 ; 
+    
+    printf("MEDIA = %.2f", *media);
+    
+    return 0;
+}
+
+//05//
+
