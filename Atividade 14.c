@@ -195,6 +195,59 @@ int main(){
 }
 
 //Outra forma de responder a 05//
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    float *media = (float*) malloc(sizeof(float));
+    float *contador = (float*) malloc(sizeof(float));
+    int *quantidade = (int*) malloc(sizeof(int));
+    int *opcao = (int*) malloc(sizeof(int));
+    int num = 0;
+    while(num == 0){
+      
+    printf("\n----------MENU----------\n");
+    printf("1 - Adicionar nota\n");
+    printf("2 - Calcular média\n");
+    printf("0 - Sair\n");
+    printf("------------------------\n");
+    
+    printf("Escolha uma das opções:");
+    scanf("%d", opcao);
+    
+    switch(*opcao){
+        case 1:
+        printf("Digite a quantidade de notas que deseja adicionar:");
+        scanf("%d",quantidade);
+    
+        for (int i = 0; i < *quantidade; i++){
+            float *notas = (float*) malloc((*quantidade)*sizeof(float));
+            printf("Digite a sua nota:");
+            scanf("%f", notas[i]);
+            *contador = *contador + (notas[i]);
+        }
+        break;
+        
+        case 2:
+        *media = *contador / *quantidade;
+        printf("MEDIA = %.2f\n", *media);
+        break;
+        
+        case 0:
+        printf("Fim do Programa");
+        num = 1;
+        break;
+        
+        default:
+        printf("Opção inválida\n\n");
+        printf("MENU\n");
+        printf("1 - Adicionar nota\n");
+        printf("2 - Calcular média\n");
+        printf("0 - Sair\n");
+}
+
+}
+}
 
 
 
