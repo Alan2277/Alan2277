@@ -77,13 +77,14 @@ int main(){
 	printf("Informe o total de vendas no mes:");
 	scanf("%f",&vendedor->vendas);
 	
-    vendedor->salario_final = ((vendedor->vendas) * 0.15) + (vendedor->salario);
+    	vendedor->salario_final = ((vendedor->vendas) * 0.15) + (vendedor->salario);
 	
 	printf("TOTAL = %.2f", vendedor->salario_final);
 	
 	return 0;
 }
-//Ou pode ser de outra forma// 03//
+//Ou pode ser de outra forma//
+//03//
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -98,7 +99,7 @@ int main(){
 	printf("Informe o total de vendas no mes:");
 	scanf("%f",vendas);
 	
-    *salario_final = ((*vendas) * 0.15) + (*salario);
+    	*salario_final = ((*vendas) * 0.15) + (*salario);
 	
 	printf("TOTAL = %.2f", *salario_final);
 	
