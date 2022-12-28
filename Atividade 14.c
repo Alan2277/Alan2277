@@ -223,7 +223,7 @@ int main(){
         for (int i = 0; i < *quantidade; i++){
             float *notas = (float*) malloc((*quantidade)*sizeof(float));
             printf("Digite a sua nota:");
-            scanf("%f", notas[i]);
+            scanf("%f",&notas[i]);
             *contador = *contador + (notas[i]);
         }
         break;
@@ -248,6 +248,3 @@ int main(){
 
 }
 }
-
-
-
