@@ -51,18 +51,16 @@ int main(){
             	   scanf("%d",&pedido[i].mesa);
             	   printf("Deseja fazer alguma observação: ");
             	   scanf("%s",pedido[i].obs);
-            	   
-            	    
-            	    
                 }
                 break;
-                case 2:
+                
+            case 2:
 			
-                   pedido->codigo = 100;
-                   pedido->contador =1;
+                pedido->codigo = 100;
+                pedido->contador =1;
 			
-                   for(int i = 0; i < pedido->qtd_registrar; i++){
-                       printf("\n------------------------------------------------\n");
+                for(int i = 0; i < pedido->qtd_registrar; i++){
+                    printf("\n------------------------------------------------\n");
                        printf("-------------------%dº - Pedido------------------\n",pedido->contador);
                        printf("------------------------------------------------\n");
                 	printf("Codigo = %d \n",pedido->codigo);
@@ -73,15 +71,17 @@ int main(){
                 	pedido->codigo++;
                 	pedido->contador++;
 	                }
-	                break;
-	            case 0:
-	            	printf("----------AGRADEÇO PELA PREFERENCIA----------\n");
+	           break;
+	                
+	        case 0:
+	            printf("----------AGRADEÇO PELA PREFERENCIA----------\n");
 	           	printf("-------------FIM DO PROGRAMA-----------------");
-	            	pedido->parar =! 0;
-	           	    break;
-	           default:
-			printf("Opção inválida.");
-			menu();
+	            pedido->parar =! 0;
+	           	break;
+	           	    
+	        default:
+		        printf("Opção inválida.");
+			    menu();
             
         }
     }
