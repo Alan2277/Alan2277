@@ -56,32 +56,32 @@ int main(){
                 
             case 2:
 			
-                pedido->codigo = 100;
-                pedido->contador =1;
+               pedido->codigo = 100;
+               pedido->contador =1;
 			
-                for(int i = 0; i < pedido->qtd_registrar; i++){
-                    printf("\n------------------------------------------------\n");
-                       printf("-------------------%dº - Pedido------------------\n",pedido->contador);
-                       printf("------------------------------------------------\n");
-                	printf("Codigo = %d \n",pedido->codigo);
-                	printf("Item = %d\n",pedido[i].item);
-                	printf("Quantidade = %d\n", pedido[i].quantidade); 
-                	printf("Mesa = %d\n",pedido[i].mesa);
-                	printf("Observação = %s\n",pedido[i].obs);
-                	pedido->codigo++;
-                	pedido->contador++;
-	                }
+               for(int i = 0; i < pedido->qtd_registrar; i++){
+            	   printf("\n------------------------------------------------\n");
+            	   printf("-------------------%dº - Pedido------------------\n",pedido->contador);
+            	   printf("------------------------------------------------\n");
+            	   printf("Codigo = %d \n",pedido->codigo);
+            	   printf("Item = %d\n",pedido[i].item);
+            	   printf("Quantidade = %d\n", pedido[i].quantidade); 
+            	   printf("Mesa = %d\n",pedido[i].mesa);
+            	   printf("Observação = %s\n",pedido[i].obs);
+            	   pedido->codigo++;
+            	   pedido->contador++;
+	           }
 	           break;
 	                
-	        case 0:
-	            printf("----------AGRADEÇO PELA PREFERENCIA----------\n");
-	           	printf("-------------FIM DO PROGRAMA-----------------");
-	            pedido->parar =! 0;
-	           	break;
+            case 0:
+               printf("----------AGRADEÇO PELA PREFERENCIA----------\n");
+               printf("-------------FIM DO PROGRAMA-----------------");
+               pedido->parar =! 0;
+               break;
 	           	    
-	        default:
-		        printf("Opção inválida.");
-			    menu();
+            default:
+               printf("Opção inválida.");
+               menu();
             
         }
     }
