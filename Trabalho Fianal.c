@@ -46,7 +46,7 @@ int main(){
             	scanf("%d",&pedido[cont].item);
             	printf("Informe a quantidade de item que deseja:");
             	scanf("%d",&pedido[cont].quantidade);
-            	printf("Digite o numero da mesa que esta registrando o pedido: ");
+            	printf("Digite o numero da mesa que esta registrando o pedido:");
             	scanf("%d",&pedido[cont].mesa);
             	printf("Deseja fazer alguma observação: ");
             	scanf("%s",pedido[cont].obs);
@@ -55,7 +55,7 @@ int main(){
                 
             case 2:
 			
-            	pedido->codigo = 0;
+            	pedido->codigo = 1;
             	pedido->contador =1;
 			
             	for(int i = 0; i < cont ; i++){
@@ -80,7 +80,7 @@ int main(){
             	   if(pedido[i].codigo == codigo ){
             	   	ind = i;
             	   	}
-            	   }
+            	}
 				
             	for(int i = ind; i< cont - 1; i++){
             	   pedido[i] = pedido[i+1];
@@ -88,7 +88,7 @@ int main(){
             	cont--;
             	break;
             case 0:
-            	printf("----------AGRADEÇO PELA PREFERENCIA----------\n");
+            	printf("----------AGRADEÇO PELA PREFERÊNCIA----------\n");
                 printf("-------------FIM DO PROGRAMA-----------------");
                 pedido->parar =! 0;
                 break;
