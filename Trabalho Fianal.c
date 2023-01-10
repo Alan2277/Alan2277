@@ -43,13 +43,13 @@ int main(){
         switch(pedido->opcao){
             case 1:
             	printf("Informe o item que deseja registrar:");
-            	scanf("%d",&pedido[ind].item);
+            	scanf("%d",&pedido[cont].item);
             	printf("Informe a quantidade de item que deseja:");
-            	scanf("%d",&pedido[ind].quantidade);
+            	scanf("%d",&pedido[cont].quantidade);
             	printf("Digite o numero da mesa que esta registrando o pedido: ");
-            	scanf("%d",&pedido[ind].mesa);
+            	scanf("%d",&pedido[cont].mesa);
             	printf("Deseja fazer alguma observação: ");
-            	scanf("%s",pedido[ind].obs);
+            	scanf("%s",pedido[cont].obs);
             	cont++;
                 break;
                 
