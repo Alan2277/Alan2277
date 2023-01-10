@@ -30,36 +30,33 @@ int main(){
     pedido = (struct Inf_registro*) malloc(500*sizeof(struct Inf_registro));
     
     pedido->parar = 0;
-	
+	int x = 0;
     while(pedido->parar == 0){
         menu();
         
-	printf("Escolha uma opção = ");
+    	printf("Escolha uma opção = ");
         scanf("%d",&pedido->opcao);
+        
         
         switch(pedido->opcao){
             case 1:
-               printf("Informe quantos registros deseja fazer:");
-               scanf("%d",&pedido->qtd_registrar);
-	    
-               for(int i = 0; i < pedido->qtd_registrar; i++){
             	   printf("Informe o item que deseja registrar:");
-            	   scanf("%d",&pedido[i].item);
+            	   scanf("%d",&pedido[x].item);
             	   printf("Informe a quantidade de item que deseja:");
-            	   scanf("%d",&pedido[i].quantidade);
+            	   scanf("%d",&pedido[x].quantidade);
             	   printf("Digite o numero da mesa que esta registrando o pedido: ");
-            	   scanf("%d",&pedido[i].mesa);
+            	   scanf("%d",&pedido[x].mesa);
             	   printf("Deseja fazer alguma observação: ");
-            	   scanf("%s",pedido[i].obs);
-                }
+            	   scanf("%s",pedido[x].obs);
+            	   x++;
                 break;
                 
             case 2:
 			
-               pedido->codigo = 100;
+               pedido->codigo = 0;
                pedido->contador =1;
 			
-               for(int i = 0; i < pedido->qtd_registrar; i++){
+               for(int i = 0; i < x ; i++){
             	   printf("\n------------------------------------------------\n");
             	   printf("-------------------%dº - Pedido------------------\n",pedido->contador);
             	   printf("------------------------------------------------\n");
@@ -72,7 +69,22 @@ int main(){
             	   pedido->contador++;
 	           }
 	           break;
-	                
+	         case 3:
+	            int codigo = 0;
+	            printf("Cod = ");
+	            scanf("%d",&codigo);
+	        	int ind = 0;
+	        	for (int i = 0; i < x;i++){
+	        		if(pedido[i].codigo == codigo ){
+	        			ind = i;
+					}
+				}
+				
+				for(int i = ind; i< x - 1; i++){
+					pedido[i] = pedido[i+1];
+				}
+				x--;
+				break;
             case 0:
                printf("----------AGRADEÇO PELA PREFERENCIA----------\n");
                printf("-------------FIM DO PROGRAMA-----------------");
