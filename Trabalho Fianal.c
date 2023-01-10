@@ -3,12 +3,12 @@
 #include <string.h>
 
 void menu(){
-	printf("-----------IFFOOD-----------\n");
-	printf("------------MENU------------\n");
-	printf("1 - REGISTRAR PEDIDO\n");
-	printf("2 - EXIBIR PEDIDO\n");
-	printf("3 - ENTREGAR PEDIDO\n");
-	printf("0 - SAIR\n");
+    printf("-----------IFFOOD-----------\n");
+    printf("------------MENU------------\n");
+    printf("1 - REGISTRAR PEDIDO\n");
+    printf("2 - EXIBIR PEDIDO\n");
+    printf("3 - ENTREGAR PEDIDO\n");
+    printf("0 - SAIR\n");
 }
 
 struct Inf_registro{
@@ -30,7 +30,9 @@ int main(){
     pedido = (struct Inf_registro*) malloc(500*sizeof(struct Inf_registro));
     
     pedido->parar = 0;
-	int x = 0;
+    
+    int cont = 0;
+	
     while(pedido->parar == 0){
         menu();
         
@@ -40,23 +42,23 @@ int main(){
         
         switch(pedido->opcao){
             case 1:
-            	   printf("Informe o item que deseja registrar:");
-            	   scanf("%d",&pedido[x].item);
-            	   printf("Informe a quantidade de item que deseja:");
-            	   scanf("%d",&pedido[x].quantidade);
-            	   printf("Digite o numero da mesa que esta registrando o pedido: ");
-            	   scanf("%d",&pedido[x].mesa);
-            	   printf("Deseja fazer alguma observação: ");
-            	   scanf("%s",pedido[x].obs);
-            	   x++;
+            	printf("Informe o item que deseja registrar:");
+            	scanf("%d",&pedido[ind].item);
+            	printf("Informe a quantidade de item que deseja:");
+            	scanf("%d",&pedido[ind].quantidade);
+            	printf("Digite o numero da mesa que esta registrando o pedido: ");
+            	scanf("%d",&pedido[ind].mesa);
+            	printf("Deseja fazer alguma observação: ");
+            	scanf("%s",pedido[ind].obs);
+            	cont++;
                 break;
                 
             case 2:
 			
-               pedido->codigo = 0;
-               pedido->contador =1;
+            	pedido->codigo = 0;
+            	pedido->contador =1;
 			
-               for(int i = 0; i < x ; i++){
+            	for(int i = 0; i < cont ; i++){
             	   printf("\n------------------------------------------------\n");
             	   printf("-------------------%dº - Pedido------------------\n",pedido->contador);
             	   printf("------------------------------------------------\n");
@@ -69,31 +71,31 @@ int main(){
             	   pedido->contador++;
 	           }
 	           break;
-	         case 3:
-	            int codigo = 0;
-	            printf("Cod = ");
-	            scanf("%d",&codigo);
-	        	int ind = 0;
-	        	for (int i = 0; i < x;i++){
-	        		if(pedido[i].codigo == codigo ){
-	        			ind = i;
-					}
-				}
+            case 3:
+            	int codigo = 0;
+            	printf("Qual o pedido que deseja excluir:");
+            	scanf("%d",&codigo);
+            	int ind = 0;
+            	for (int i = 0; i < cont;i++){
+            	   if(pedido[i].codigo == codigo ){
+            	   	ind = i;
+            	   	}
+            	   }
 				
-				for(int i = ind; i< x - 1; i++){
-					pedido[i] = pedido[i+1];
-				}
-				x--;
-				break;
+            	for(int i = ind; i< cont - 1; i++){
+            	   pedido[i] = pedido[i+1];
+            	   }
+            	cont--;
+            	break;
             case 0:
-               printf("----------AGRADEÇO PELA PREFERENCIA----------\n");
-               printf("-------------FIM DO PROGRAMA-----------------");
-               pedido->parar =! 0;
-               break;
+            	printf("----------AGRADEÇO PELA PREFERENCIA----------\n");
+                printf("-------------FIM DO PROGRAMA-----------------");
+                pedido->parar =! 0;
+                break;
 	           	    
             default:
-               printf("Opção inválida.");
-               menu();
+            	printf("Opção inválida.");
+                menu();
             
         }
     }
