@@ -18,9 +18,7 @@ struct Inf_registro{
     int item;
     int quantidade;
     int mesa;
-    int opcao;
     int qtd_registrar;
-    int parar;    
 };
 
 
@@ -29,18 +27,20 @@ int main(){
     struct Inf_registro *pedido;
     pedido = (struct Inf_registro*) malloc(500*sizeof(struct Inf_registro));
     
-    pedido->parar = 0;
+    int parar = 0;
     
+    int opcao = 0;
+        
     int cont = 0;
 	
-    while(pedido->parar == 0){
+    while(parar == 0){
         menu();
         
     	printf("Escolha uma opção = ");
-        scanf("%d",&pedido->opcao);
+        scanf("%d",&opcao);
         
         
-        switch(pedido->opcao){
+        switch(opcao){
             case 1:
             	printf("Informe o item que deseja registrar:");
             	scanf("%d",&pedido[cont].item);
@@ -82,7 +82,7 @@ int main(){
             	   	}
             	}
 				
-            	for(int i = ind; i< cont - 1; i++){
+            	for(int i = ind; i < cont - 1; i++){
             	   pedido[i] = pedido[i+1];
             	   }
             	cont--;
@@ -90,7 +90,7 @@ int main(){
             case 0:
             	printf("----------AGRADEÇO PELA PREFERÊNCIA----------\n");
                 printf("-------------FIM DO PROGRAMA-----------------");
-                pedido->parar =! 0;
+                parar =! 0;
                 break;
 	           	    
             default:
