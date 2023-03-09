@@ -1,4 +1,7 @@
-//Atividade 01 de Programação Orientada a Objeto\\
+//Licenciatura Plena em Computação(Turma:226)
+//Disciplina: Programação Orientada a Objetos
+//Alan Alexandre Sampaio
+//Atividade 1 - Introdução a Dart
 
 //01//
 void main (){
@@ -29,7 +32,6 @@ void main(){
   
   print("${horas}h:${minutos}m:${segundos}s");
   
-
 }
 
 //04//
